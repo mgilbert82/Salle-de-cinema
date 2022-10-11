@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS t_cinema_session;
 /*Creation de la table */
 CREATE TABLE t_cinema_session (
     cs_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    cs_time_slot TIME NOT NULL,
+    cs_time_slot DATETIME NOT NULL,
     cs_theater_id INT,
     cs_movie_id INT,
     cs_room_id INT,
