@@ -106,7 +106,7 @@ Création des requêtes :
 
 ## Réalisation d'un diagramme MCD
 
-(voir annexe)
+[Voir le diagramme](https://github.com/mgilbert82/salle-de-cinema/blob/main/Diag%20MCD.jpg)
 
 ## Installation de mysql avec Homebrew sur Mac M1 (OS MONTEREY)
 
@@ -173,3 +173,20 @@ mysql > create user « username »@localhost identified by « password »;
 mysql > grant all privileges on « dbname » .\* to « username »@localhost;
 mysql > flush privileges;
 ```
+
+## Sauvegarde complète de sa base de donnée
+
+1. Télécharger l’installateur sur le site de mysql en fonction de votre environnement de travail (windows, macos, linux,...)
+2. Installer l’outil sur votre ordinateur
+3. Lancer l’application et paramétrer l’environnement mysql avec comme identifiant et mot de passe :
+
+```
+User: vscode
+Mot de passe : VSCODEmdp78%
+```
+
+4. Se rendre sur “Server” puis sur “Data Export”.
+5. Sélectionner la base de données à sauvegarder. !Choisir “Dump Structure and Data".
+6. Choisir le dossier de destination et cliquer sur Export.
+
+Votre fichier contenant la structure de la base de données ainsi que les données sont maintenant disponibles dans le répertoire choisi au préalable.
