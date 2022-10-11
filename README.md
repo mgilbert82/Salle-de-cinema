@@ -108,6 +108,62 @@ Création des requêtes :
 
 (voir annexe)
 
+## Installation de mysql avec Homebrew sur Mac M1 (OS MONTEREY)
+
+Pré-requis: installer homebrew -> se rendre sur le site d'[Homebrew](https://docs.brew.sh/Installation)
+
+Installer mysql via le terminal de commande
+
+```bash
+brew install mysql
+```
+
+Afin de pouvoir modifier le mot de passe admin de votre mysql, voici quelques étapes à réaliser :
+
+1. Ouvrez et modifiez le fichier (/etc/my.cnf) ou (/etc/mysql/my.cnf), selon votre distribution.
+2. Ajouter skip-grant-tables au fichier [mysqld]
+3. Redémarrez MySQL avec la commande
+
+```bash
+brew services restart mysql
+```
+
+4. Pour vous connecter à MySQL, utiliser la commande ci-dessous :
+
+```bash
+ mysql -u root -p
+```
+
+5. Lancer la commade
+
+```bash
+mysql> flush privileges;
+```
+
+6. Définissez un nouveau mot de passe avec la commande :
+
+```bash
+> mysql ALTER USER 'root'@'localhost' IDENTIFIED BY 'NewPassword';
+```
+
+7. Retourner sur le fichier de départ (/etc/my.cnf) et supprimer ou commentez la ligne (avec un #)
+
+```sql
+skip-grant-tables
+```
+
+8. Redémarrez MySQL avec la commande
+
+```bash
+brew services restart mysql
+```
+
+9. Vous pourrez maintenant vous connecter avec le nouveau mot de passe
+
+```bash
+mysql -u root -p
+```
+
 ## Sécurité
 
 Création d'un user pour accéder à la base de donnée
